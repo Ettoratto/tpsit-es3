@@ -47,10 +47,15 @@ public class ServerThread extends Thread {
 
             String str;
             try {
-                while (Integer.parseInt(str = in.readLine()) != num) {
+                int nClient = Integer.parseInt(str = in.readLine());
+                while (nClient != num) {
 
+                    if (nClient > num)
+                        out.println("Il numero inserito e' troppo grande");
+                    else
+                        out.println("Il numero inserito e' troppo piccolo");
                     System.out.println("Client: " + str);
-                    out.println("Numero Sbagliato");
+                    
                 }
 
                 out.println("Hai indovinato!");
